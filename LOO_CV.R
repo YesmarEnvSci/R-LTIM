@@ -1,13 +1,11 @@
 ##########################################################################################################
 #  
-#  Exercise 2 - Fit and Evaluate Models in R tutorial
-# 
-#  Appendix 1 - Leave-one-out (LOO) cross validation (CV)                                                         
+# Leave-one-out (LOO) cross validation (CV)                                                         
 #
 ##########################################################################################################
 
-## SECTION 1:  Input Data - Edit these 
-
+## SECTION 1:  Input Data
+op <-par(mfrow=c(1,1))
 lidarData <- read.csv("BA_lidarData.csv")
 respVar = 'BAtotal'
 modelFormula = BAtotal ~ P70*all_1st_cover_mean

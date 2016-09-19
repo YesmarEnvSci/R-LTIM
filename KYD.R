@@ -1,19 +1,22 @@
-## Know Your Data (KYD)
+## Know Your Data (KYD) - For Tree Inventory Model Analysis
 ##Bern Romey
 
-lidardata <- read.csv("BA_lidarData.csv")
+lidarData <- read.csv("BA_lidarData.csv")
 
-str(lidardata)
-names(lidardata)
-summary(lidardata)
+str(lidarData)
+names(lidarData)
+summary(lidarData)
 
-ResponseV <- lidardata$BAtotal
-plot(lidardata$HMean,ResponseV)
-cor(lidardata$HMean, lidardata$BAtotal)
-corrMat <- cor(lidardata[,-1])
+ResponseV <- lidarData$BAtotal
+plot(lidarData$HMean,ResponseV)
+cor(lidarData$HMean, lidarData$BAtotal)
+corrMat <- cor(lidarData[,-1])
 print(round(corrMat,2))
-range(lidardata$HMax)
-hist(lidardata$BAtotal, freq = F)
-var(lidardata$BAtotal)
-sd(lidardata$BAtotal)
+range(lidarData$HMax)
+hist(lidarData$BAtotal, freq = F)
+var(lidarData$BAtotal)
+sd(lidarData$BAtotal)
 
+source('cor.matrix.r')
+cor.matrix(lidarData)
+boxplot(lidarData[,-1])
